@@ -9,12 +9,12 @@ Perform closures after a delay without all the hassle. `Timer` is a light wrappe
 
 ####How to use
 
-- [Anonymous timers](#anonymous-timers)
-- [Naming a timer](#naming-a-timer)
-- [Getting a timer by its name](#getting-a-timer)
-- [Destroy a timer before it fires](#destroy-a-timer)
-- [Fire a timer prematurely](#fire-a-timer)
-- [Repeating timers](#repeating-timers)
+- [Anonymous timers](##anonymous-timers)
+- [Naming a timer](##naming-a-timer)
+- [Getting a timer by its name](##getting-a-timer)
+- [Destroy a timer before it fires](##destroy-a-timer)
+- [Fire a timer prematurely](##fire-a-timer)
+- [Repeating timers](##repeating-timers)
 
 ####Properties
 
