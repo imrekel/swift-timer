@@ -26,7 +26,7 @@ Perform closures after a delay without all the hassle. `Timer` is a light wrappe
 
 `let repeats: Bool` Whether or not the timer continues past its first delay cycle
 
-###Anonymous timers
+####Anonymous timers
 
 ```Swift
 Timer(1) {
@@ -34,13 +34,13 @@ Timer(1) {
 }
 ```
 
-###Naming a timer
+####Naming a timer
 
 ```Swift
 Timer("logo enter", 1.5, enterLogo)
 ```
 
-###Getting a timer by its name
+####Getting a timer by its name
 
 ```Swift
 if let timer = Timer.named("logo enter") {
@@ -48,19 +48,19 @@ if let timer = Timer.named("logo enter") {
 }
 ```
 
-###Destroy a timer before it fires
+####Destroy a timer before it fires
 
 ```Swift
 timer.kill()
 ```
 
-###Fire a timer prematurely
+####Fire a timer prematurely
 
 ```Swift
 timer.fire()
 ```
 
-###Repeating timers
+####Repeating timers
 
 **Important**: Since repeating `Timer`s have longer lifetimes than single-use `Timer`s, you are required to retain the `Timer` on your own.
 
