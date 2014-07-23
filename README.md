@@ -29,7 +29,7 @@ Straight-forward, delayed closure execution in Swift.
 
 `let repeats: Bool` Whether or not the timer continues past its first delay cycle
 
-###Anonymous timers
+###Anonymous timers<a name="anonymous"></a>
 
 ```Swift
 Timer(1) {
@@ -37,13 +37,13 @@ Timer(1) {
 }
 ```
 
-###Naming a timer
+###Naming a timer<a name="naming"></a>
 
 ```Swift
 Timer("logo enter", 1.5, enterLogo)
 ```
 
-###Getting a timer by its name
+###Getting a timer by its name<a name="getting"></a>
 
 ```Swift
 if let timer = Timer.named("logo enter") {
@@ -51,7 +51,7 @@ if let timer = Timer.named("logo enter") {
 }
 ```
 
-###Pause/start a timer
+###Pause/start a timer<a name="pause"></a>
 
 ```Swift
 // Pauses and resets the timer
@@ -61,19 +61,19 @@ timer.pause()
 timer.start()
 ```
 
-###Destroy a timer before it fires
+###Destroy a timer before it fires<a name="destroy"></a>
 
 ```Swift
 timer.kill()
 ```
 
-###Fire a timer prematurely
+###Fire a timer prematurely<a name="fire"></a>
 
 ```Swift
 timer.fire()
 ```
 
-###Repeating timers
+###Repeating timers<a name="repeating"></a>
 
 **Note**: Since repeating `Timer`s have longer lifetimes than single-use `Timer`s, you are required to retain the `Timer` on your own.
 
