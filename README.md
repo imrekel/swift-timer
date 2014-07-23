@@ -1,6 +1,6 @@
 ##Timer
 
-Perform closures after a delay without all the hassle. **Timer** is a light wrapper around `NSTimer`, with the goal of being easy on the eyes and easy to use.
+Perform closures after a delay without all the hassle. `Timer` is a light wrapper around `NSTimer`, with the goal of being easy on the eyes and easy to use.
 
 ####Please note
 
@@ -9,43 +9,22 @@ Perform closures after a delay without all the hassle. **Timer** is a light wrap
 
 ####How to use
 
-[Anonymous timers](#anonymous-timers)
-
-[Naming a timer](#naming-a-timer)
-
-[Getting a timer by its name](#getting-a-timer)
-
-[Destroy a timer before it fires](#destroy-a-timer)
-
-[Fire a timer prematurely](#fire-a-timer)
-
-[Repeating timers](#repeating-timers)
+- [Anonymous timers](#anonymous-timers)
+- [Naming a timer](#naming-a-timer)
+- [Getting a timer by its name](#getting-a-timer)
+- [Destroy a timer before it fires](#destroy-a-timer)
+- [Fire a timer prematurely](#fire-a-timer)
+- [Repeating timers](#repeating-timers)
 
 ####Properties
 
-`var name: String`
+`var name: String` The unique identifier
 
-The unique identifier
+`let delay: Double` Number of seconds the Timer waits until firing
 
--
+`let callback: () -> ()` The closure to be executed when the Timer fires
 
-`let delay: Double`
-
-Number of seconds the Timer waits until firing
-
--
-
-`let callback: () -> ()`
-
-The closure to be executed when the Timer fires
-
--
-
-`let repeats: Bool`
-
-Whether or not the timer continues past its first delay cycle
-
----
+`let repeats: Bool` Whether or not the timer continues past its first delay cycle
 
 ###Anonymous timers
 
@@ -83,29 +62,18 @@ timer.fire()
 
 ###Repeating timers
 
-```Swift
-
-```
-
-A `Timer` instance gives you full access to its behavior. Here's a list of available properties and methods:
+**Important**: Since repeating `Timer`s have longer lifetimes than single-use `Timer`s, you are required to retain the `Timer` on your own.
 
 ```Swift
-// Destroy a Timer immediately
-Timer.named("logo enter")?.kill()
+// Execute a closure immediately and every 2 seconds afterwards
+self.beepTimer = Timer.repeat(before: 2) {
+  println("Beep")
+}
 
-// Pause a Timer so you can restart it later
-timer.pause()
-
-// Restart a Timer after you paused it
-timer.start()
-
-// Execute a Timer's callback immediately and kill it too
-timer.fire()
-
-// Get a Timer's unique identifier
-let tid = timer.name
-
-// 
-
-// Get a Timer's callback
+// Execute a closure every 2 seconds, but not immediately
+self.boopTimer = Timer.repeat(after: 2) {
+  println("Boop")
+}
 ```
+
+####Crafted by [**@aleclarsoniv**](https://twitter.com/aleclarsoniv)
