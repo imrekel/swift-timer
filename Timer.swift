@@ -5,10 +5,6 @@ import Foundation
 private var timers = [String:Timer]()
 
 public class Timer {
-
-  public typealias Seconds = CGFloat
-  
-  public typealias Callback = () -> ()
   
   // Unique identifier for the Timer
   public var name: String? {
@@ -20,17 +16,17 @@ public class Timer {
   }
   
   // How long to wait per delay cycle
-  public let delay: Seconds
+  public let delay: Double
   
   // What code to execute after every delay cycle
-  public let callback: Callback
+  public let callback: () -> ()
   
   // If the Timer exceeds past one delay cycle
   public let repeats = false
   
   /// Anonymous timer that's given a random name to be retained with
   /// NB: Does NOT need to be manually retained
-  public convenience init (_ delay: Seconds, _ callback: Callback) {
+  public convenience init (_ delay: Double, _ callback: () -> ()) {
     var name: String!
     do {
       name = __randomString(7)
@@ -41,7 +37,7 @@ public class Timer {
   
   /// Named timer that can be referenced via Timer.named("unique id")
   /// NB: Does NOT need to be manually retained
-  public init (_ name: String, _ delay: Seconds, _ callback: Callback) {
+  public init (_ name: String, _ delay: Double, _ callback: () -> ()) {
   
     // Stop a timer that has the same name, if it exists
     timers[name]?.kill()
@@ -53,12 +49,12 @@ public class Timer {
     start()
   }
   
-  public class func repeat (before delay: Seconds, _ callback: Callback) -> Timer {
+  public class func repeat (before delay: Double, _ callback: () -> ()) -> Timer {
     callback()
     return Timer(repeat: delay, callback)
   }
   
-  public class func repeat (after delay: Seconds, _ callback: Callback) -> Timer {
+  public class func repeat (after delay: Double, _ callback: () -> ()) -> Timer {
     return Timer(repeat: delay, callback)
   }
   
@@ -103,7 +99,7 @@ public class Timer {
     if !repeats { kill() }
   }
   
-  private init (repeat delay: CGFloat, _ callback: VoidClosure) {
+  private init (repeat delay: Double, _ callback: VoidClosure) {
     self.delay = delay
     self.callback = callback
     self.repeats = true
