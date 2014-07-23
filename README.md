@@ -14,6 +14,7 @@ Straight-forward, delayed closure execution in Swift.
 - [Anonymous timers](#anonymous-timers)
 - [Naming a timer](#naming-a-timer)
 - [Getting a timer by its name](#getting-a-timer)
+- [Pause/restart a timer](#pause)
 - [Destroy a timer before it fires](#destroy-a-timer)
 - [Fire a timer prematurely](#fire-a-timer)
 - [Repeating timers](#repeating-timers)
@@ -50,6 +51,16 @@ if let timer = Timer.named("logo enter") {
 }
 ```
 
+###Pause/start a timer
+
+```Swift
+// Pauses and resets the timer
+timer.pause()
+
+// Only useful if you `reset()` the timer first
+timer.start()
+```
+
 ###Destroy a timer before it fires
 
 ```Swift
@@ -64,7 +75,7 @@ timer.fire()
 
 ###Repeating timers
 
-**Important**: Since repeating `Timer`s have longer lifetimes than single-use `Timer`s, you are required to retain the `Timer` on your own.
+**Note**: Since repeating `Timer`s have longer lifetimes than single-use `Timer`s, you are required to retain the `Timer` on your own.
 
 ```Swift
 // Execute a closure immediately and every 2 seconds afterwards
