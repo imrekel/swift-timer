@@ -11,13 +11,13 @@ Straight-forward, delayed closure execution in Swift.
 
 ###How to use
 
-- [Anonymous timers](#anonymous-timers)
-- [Naming a timer](#naming-a-timer)
-- [Getting a timer by its name](#getting-a-timer)
-- [Pause/restart a timer](#pause)
-- [Destroy a timer before it fires](#destroy-a-timer)
-- [Fire a timer prematurely](#fire-a-timer)
-- [Repeating timers](#repeating-timers)
+- [Anonymous timers](#anonymous)
+- [Naming a timer](#naming)
+- [Getting a timer by its name](#getting)
+- [Pause & restart a timer](#pause)
+- [Destroy a timer before it fires](#destroy)
+- [Fire a timer prematurely](#fire)
+- [Repeating timers](#repeating)
 
 ###Properties
 
