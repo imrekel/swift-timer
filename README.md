@@ -2,20 +2,48 @@
 
 Perform closures after a delay without all the hassle. **Timer** is a light wrapper around `NSTimer`, with the goal of being easy on the eyes and easy to use.
 
-####How to use
+####Please note
 
 - Each `Timer` handles its own memory management. You're not forced to use ivars! :smile:
 - For your convenience, `Timer`s start themselves immediately after they're created!
+
+####How to use
 
 [Anonymous timers](#anonymous-timers)
 
 [Naming a timer](#naming-a-timer)
 
-[Getting a timer by its name]()
+[Getting a timer by its name](#getting-a-timer)
 
-[Destroy a timer before it fires]()
+[Destroy a timer before it fires](#destroy-a-timer)
 
-[**Fire a timer prematurely]()
+[Fire a timer prematurely](#fire-a-timer)
+
+[Repeating timers](#repeating-timers)
+
+####Properties
+
+`var name: String`
+
+The unique identifier
+
+-
+
+`let delay: Double`
+
+Number of seconds the Timer waits until firing
+
+-
+
+`let callback: () -> ()`
+
+The closure to be executed when the Timer fires
+
+-
+
+`let repeats: Bool`
+
+Whether or not the timer continues past its first delay cycle
 
 ---
 
@@ -30,19 +58,33 @@ Timer(1) {
 ###Naming a timer
 
 ```Swift
-func enterLogo () {
-  // Eye candy goes here
-}
-
-Timer("logo enter", 1.5, enterLogo) 
+Timer("logo enter", 1.5, enterLogo)
 ```
 
-Retrieve a `Timer?` by its `name` with the `named(String)` method.
+###Getting a timer by its name
 
 ```Swift
 if let timer = Timer.named("logo enter") {
   println("Timer \(timer.name) exists!")
 }
+```
+
+###Destroy a timer before it fires
+
+```Swift
+timer.kill()
+```
+
+###Fire a timer prematurely
+
+```Swift
+timer.fire()
+```
+
+###Repeating timers
+
+```Swift
+
 ```
 
 A `Timer` instance gives you full access to its behavior. Here's a list of available properties and methods:
