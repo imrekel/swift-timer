@@ -1,6 +1,6 @@
 ##Timer
 
-Perform closures after a delay without all the hassle. `Timer` is a light wrapper around `NSTimer`, with the goal of being easy on the eyes and easy to use.
+Straight-forward, delayed closure execution in Swift. `Timer` is a light wrapper around `NSTimer`, with the goal of being easy on the eyes and easy to use.
 
 ###Take note
 
