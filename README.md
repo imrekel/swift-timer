@@ -4,7 +4,7 @@ Straight-forward, delayed closure execution in Swift. `Timer` is a light wrapper
 
 ###Take note
 
-- Each `Timer` handles its own memory management. You're not forced to use ivars! :smile:
+- Each single-use `Timer` handles its own memory management. You're not forced to use ivars! :smile:
 - For your convenience, `Timer`s start themselves immediately after they're created!
 
 ###How to use
