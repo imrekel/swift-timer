@@ -6,7 +6,7 @@ private var timers = [String:Timer]()
 
 public class Timer {
   
-  public let name: String
+  public let name: String?
   
   public let delay: Double
   
@@ -43,7 +43,7 @@ public class Timer {
   
   public func start () {
     if nsTimer { return }
-    nsTimer = NSTimer(timeInterval: NSTimeInterval(delay), target: self, selector: "execute", userInfo: nil, repeats: repeats)
+    nsTimer = NSTimer(timeInterval: delay, target: self, selector: "execute", userInfo: nil, repeats: repeats)
     NSRunLoop.currentRunLoop().addTimer(nsTimer!, forMode: NSRunLoopCommonModes)
   }
   
@@ -60,7 +60,7 @@ public class Timer {
   
   public func kill () {
     pause()
-    timers[name] = nil
+    timers[name!] = nil
   }
   
   private var nsTimer: NSTimer?
@@ -72,6 +72,10 @@ public class Timer {
   
   private init (repeat delay: Double, _ callback: VoidClosure) {
     repeats = true
-    self.init(delay, callback)
+    
+    self.delay = delay
+    self.callback = callback
+    
+    start()
   }
 }
