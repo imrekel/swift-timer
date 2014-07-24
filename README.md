@@ -21,7 +21,7 @@ Straight-forward, delayed closure execution in Swift.
 
 ###Properties
 
-`let name: String` The unique identifier
+`let name: String?` The unique identifier
 
 `let delay: Double` Number of seconds the Timer waits until firing
 
