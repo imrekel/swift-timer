@@ -57,7 +57,7 @@ if let timer = Timer.named("logo enter") {
 // Pauses and resets the timer
 timer.pause()
 
-// Only useful if you `reset()` the timer first
+// Only useful if you `pause()` the timer first
 timer.start()
 ```
 
