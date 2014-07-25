@@ -21,6 +21,7 @@ public class Timer {
   public init (_ name: String, _ delay: Double, _ callback: () -> ()) {
     timers[name]?.kill()
     
+    timers[name] = self
     self.name = name
     self.delay = delay
     self.callback = callback
