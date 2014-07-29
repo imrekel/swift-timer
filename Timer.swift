@@ -10,31 +10,31 @@ public class Timer {
   
   public let delay: Double
   
-  public let callback: () -> ()
+  public let callback: Void -> Void
   
   public let repeats = false
   
-  public convenience init (_ delay: Double, _ callback: () -> ()) {
+  public convenience init (_ delay: Double, _ callback: Void -> Void) {
     self.init(NSUUID().UUIDString, delay, callback)
   }
   
-  public init (_ name: String, _ delay: Double, _ callback: () -> ()) {
+  public init (_ name: String, _ delay: Double, _ callback: Void -> Void) {
     timers[name]?.kill()
     
-    timers[name] = self
     self.name = name
     self.delay = delay
     self.callback = callback
     
+    timers[name] = self
     start()
   }
   
-  public class func repeat (before delay: Double, _ callback: () -> ()) -> Timer {
+  public class func repeat (before delay: Double, _ callback: Void -> Void) -> Timer {
     callback()
     return Timer(repeat: delay, callback)
   }
   
-  public class func repeat (after delay: Double, _ callback: () -> ()) -> Timer {
+  public class func repeat (after delay: Double, _ callback: Void -> Void) -> Timer {
     return Timer(repeat: delay, callback)
   }
   
@@ -61,7 +61,7 @@ public class Timer {
   
   public func kill () {
     pause()
-    timers[name!] = nil
+    if name { timers[name!] = nil }
   }
   
   private var nsTimer: NSTimer?
@@ -71,7 +71,7 @@ public class Timer {
     if !repeats { kill() }
   }
   
-  private init (repeat delay: Double, _ callback: VoidClosure) {
+  private init (repeat delay: Double, _ callback: Void -> Void) {
     repeats = true
     
     self.delay = delay
