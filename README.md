@@ -6,6 +6,8 @@
 
 Easily delay the execution of a closure or function. `Timer` is a Swift wrapper around [`NSTimer`](https://developer.apple.com/library/mac/documentation/cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html).
 
+**Table of Contents:**
+
 [Benefits](#benefits)
 
 [Examples](https://github.com/aleclarson/swift-timer/tree/master/example)
