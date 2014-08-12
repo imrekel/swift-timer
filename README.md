@@ -16,7 +16,7 @@ Xcode 6.0 Beta 5
 
 [Examples](https://github.com/aleclarson/swift-timer/tree/master/example)
 
-[**Timer.swift**](#timer-swift)
+[Timer.swift](#timerswift)
 
 [Release Notes](#release-notes)
 
