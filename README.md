@@ -33,7 +33,7 @@ See examples [here!](https://github.com/aleclarson/swift-timer/tree/master/examp
 
 ---
 
-### Timer
+### Timer.swift
 
 #### Constructors
 
