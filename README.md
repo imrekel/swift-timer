@@ -1,18 +1,14 @@
-# Timer
+**Version:** 0.1.0
 
-*v 0.1.0*
+**Description:** Easily delay the execution of a closure or function. `Timer` is a Swift wrapper around [`NSTimer`](https://developer.apple.com/library/mac/documentation/cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html).
 
-Easily delay the execution of a closure or function. 
+[Benefits](#benefits)
 
-`Timer` is a Swift wrapper around [`NSTimer`](https://developer.apple.com/library/mac/documentation/cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html).
+[Examples](https://github.com/aleclarson/swift-timer/tree/master/example)
 
----
+[Timer.swift](#timer-swift)
 
-[Benefits]()
-
-[Examples]()
-
-[Timer]()
+[Release Notes](#release-notes)
 
 ---
 
@@ -23,7 +19,7 @@ Easily delay the execution of a closure or function.
 - Easy access to timers from anywhere in your project!
 - Easily make a repeating timer that executes immediately!
 
-[**See examples here!**]()
+[**See examples here!**](https://github.com/aleclarson/swift-timer/tree/master/example)
 
 ---
 
