@@ -1,7 +1,5 @@
 ## Timer Examples
 
-*Compatible with Xcode 6.0 Beta 5*
-
 &nbsp;&nbsp;&nbsp;&nbsp;
 [Anonymous timer](#anonymous-timer)
 
@@ -15,7 +13,7 @@
 [Repeating timers](#repeating-timers)
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-[Pause and resume a timer](#pause-and-resume-a-timer)
+[Stop and restart a timer](#stop-and-restart-a-timer)
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 [Prevent a timer from completing](#prevent-a-timer-from-completing)
@@ -75,10 +73,10 @@ let myTimer = Timer.repeat(before: 10) {
 
 ---
 
-### Pause and resume a timer
+### Stop and restart a timer
 
 ```Swift
-myTimer.pause()
+myTimer.stop()
 
 myTimer.start()
 ```
