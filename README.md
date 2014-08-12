@@ -6,13 +6,17 @@ Easily delay the execution of a closure or function. `Timer` is a Swift wrapper 
 
 0.1.0
 
+**Compatibility:**
+
+Xcode 6.0 Beta 5
+
 **Table of Contents:**
 
 [Benefits](#benefits)
 
 [Examples](https://github.com/aleclarson/swift-timer/tree/master/example)
 
-[Timer.swift](#timer-swift)
+[**Timer.swift**](#timer-swift)
 
 [Release Notes](#release-notes)
 
@@ -25,7 +29,7 @@ Easily delay the execution of a closure or function. `Timer` is a Swift wrapper 
 - Easy access to timers from anywhere in your project!
 - Easily make a repeating timer that executes immediately!
 
-[**See examples here!**](https://github.com/aleclarson/swift-timer/tree/master/example)
+See examples [here!](https://github.com/aleclarson/swift-timer/tree/master/example)
 
 ---
 
@@ -90,6 +94,15 @@ Easily delay the execution of a closure or function. `Timer` is a Swift wrapper 
 `class func named (String) -> Timer?`
 
 > Returns an existing `Timer` with the given `name`, or nil.
+
+---
+
+### Release notes
+
+#### 0.1.0
+
+- `Timer().pause()` renamed to `stop()`
+- `Timer().callback` renamed to `handler`
 
 ---
 
