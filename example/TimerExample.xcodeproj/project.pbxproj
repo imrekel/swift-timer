@@ -6,27 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		11C9C3AE1987281400E68415 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11C9C3931987281300E68415 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11C9C39A1987281400E68415;
-			remoteInfo = TimerExample;
-		};
-		11C9C3BD1987283900E68415 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11C9C3931987281300E68415 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11C9C39A1987281400E68415;
-			remoteInfo = TimerExample;
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		11BBBDF7199ABBBE0038950F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBBDF3199ABBBE0038950F /* AppDelegate.swift */; };
+		11BBBDF8199ABBBE0038950F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11BBBDF4199ABBBE0038950F /* Info.plist */; };
+		11BBBDF9199ABBBE0038950F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBBDF5199ABBBE0038950F /* main.swift */; };
+		11BBBDFA199ABBBE0038950F /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBBDF6199ABBBE0038950F /* Timer.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11BBBDF3199ABBBE0038950F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11BBBDF4199ABBBE0038950F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BBBDF5199ABBBE0038950F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		11BBBDF6199ABBBE0038950F /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = ../Timer.swift; sourceTree = "<group>"; };
 		11C9C39B1987281400E68415 /* TimerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		11C9C39F1987281400E68415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11C9C3AD1987281400E68415 /* TimerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,20 +29,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11C9C3AA1987281400E68415 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11BBBDFB199ABBD70038950F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11BBBDF3199ABBBE0038950F /* AppDelegate.swift */,
+				11BBBDF4199ABBBE0038950F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		11C9C3921987281300E68415 = {
 			isa = PBXGroup;
 			children = (
-				11C9C39D1987281400E68415 /* TimerExample */,
+				11BBBDF5199ABBBE0038950F /* main.swift */,
+				11BBBDF6199ABBBE0038950F /* Timer.swift */,
+				11BBBDFB199ABBD70038950F /* Supporting Files */,
 				11C9C39C1987281400E68415 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,25 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				11C9C39B1987281400E68415 /* TimerExample.app */,
-				11C9C3AD1987281400E68415 /* TimerExampleTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		11C9C39D1987281400E68415 /* TimerExample */ = {
-			isa = PBXGroup;
-			children = (
-				11C9C39E1987281400E68415 /* Supporting Files */,
-			);
-			path = TimerExample;
-			sourceTree = "<group>";
-		};
-		11C9C39E1987281400E68415 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				11C9C39F1987281400E68415 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,25 +79,6 @@
 			productReference = 11C9C39B1987281400E68415 /* TimerExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		11C9C3AC1987281400E68415 /* TimerExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11C9C3BA1987281400E68415 /* Build configuration list for PBXNativeTarget "TimerExampleTests" */;
-			buildPhases = (
-				11C9C3A91987281400E68415 /* Sources */,
-				11C9C3AA1987281400E68415 /* Frameworks */,
-				11C9C3AB1987281400E68415 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				11C9C3AF1987281400E68415 /* PBXTargetDependency */,
-				11C9C3BE1987283900E68415 /* PBXTargetDependency */,
-			);
-			name = TimerExampleTests;
-			productName = TimerExampleTests;
-			productReference = 11C9C3AD1987281400E68415 /* TimerExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,10 +90,6 @@
 				TargetAttributes = {
 					11C9C39A1987281400E68415 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					11C9C3AC1987281400E68415 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 11C9C39A1987281400E68415;
 					};
 				};
 			};
@@ -151,7 +107,6 @@
 			projectRoot = "";
 			targets = (
 				11C9C39A1987281400E68415 /* TimerExample */,
-				11C9C3AC1987281400E68415 /* TimerExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -161,13 +116,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11C9C3AB1987281400E68415 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				11BBBDF8199ABBBE0038950F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,30 +127,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11C9C3A91987281400E68415 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				11BBBDFA199ABBBE0038950F /* Timer.swift in Sources */,
+				11BBBDF9199ABBBE0038950F /* main.swift in Sources */,
+				11BBBDF7199ABBBE0038950F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		11C9C3AF1987281400E68415 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11C9C39A1987281400E68415 /* TimerExample */;
-			targetProxy = 11C9C3AE1987281400E68415 /* PBXContainerItemProxy */;
-		};
-		11C9C3BE1987283900E68415 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11C9C39A1987281400E68415 /* TimerExample */;
-			targetProxy = 11C9C3BD1987283900E68415 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		11C9C3B51987281400E68415 /* Debug */ = {
@@ -286,7 +218,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = TimerExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -297,43 +229,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = TimerExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		11C9C3BB1987281400E68415 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TimerExample.app/TimerExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TimerExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		11C9C3BC1987281400E68415 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TimerExample.app/TimerExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TimerExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
 		};
@@ -356,14 +254,7 @@
 				11C9C3B91987281400E68415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		11C9C3BA1987281400E68415 /* Build configuration list for PBXNativeTarget "TimerExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11C9C3BB1987281400E68415 /* Debug */,
-				11C9C3BC1987281400E68415 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

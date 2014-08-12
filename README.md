@@ -1,92 +1,94 @@
-#Timer
+# Timer
 
-Straight-forward, delayed closure execution in Swift. 
+*v 0.1.0*
 
-`Timer` is a light wrapper around `NSTimer`, with the goal of being easy on the eyes and easy to use.
+Easily delay the execution of a closure or function. 
 
-###Take note
+`Timer` is a Swift wrapper around [`NSTimer`](https://developer.apple.com/library/mac/documentation/cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html).
 
-- Each single-use `Timer` handles its own memory management. You're not forced to use ivars! :smile:
-- For your convenience, `Timer`s start themselves immediately after they're created!
+---
 
-###How to use
+[Benefits]()
 
-- [Anonymous timers](#anonymous)
-- [Naming a timer](#naming)
-- [Getting a timer by its name](#getting)
-- [Pause & restart a timer](#pause)
-- [Destroy a timer before it fires](#destroy)
-- [Fire a timer prematurely](#fire)
-- [Repeating timers](#repeating)
+[Examples]()
 
-###Properties
+[Timer]()
 
-`let name: String?` The unique identifier
+---
 
-`let delay: Double` Number of seconds the Timer waits until firing
+### Benefits
 
-`let callback: () -> ()` The closure to be executed when the Timer fires
+- Simpler syntax! :poop:
+- Single-use timers are retained for you! :v:
+- Easy access to timers from anywhere in your project!
+- Easily make a repeating timer that executes immediately!
 
-`let repeats: Bool` Whether or not the timer continues past its first delay cycle
+[**See examples here!**]()
 
-###Anonymous timers<a name="anonymous"></a>
+---
 
-```Swift
-Timer(1) {
-  println("A second has passed!")
-}
-```
+### Timer
 
-###Naming a timer<a name="naming"></a>
+#### Constructors
 
-```Swift
-Timer("logo enter", 1.5, enterLogo)
-```
+`init (String, Double, Void -> Void)`
 
-###Getting a timer by its name<a name="getting"></a>
+> Creates a named `Timer` with the given `name`, `delay`, and `handler`.
 
-```Swift
-if let timer = Timer.named("logo enter") {
-  println("Timer \(timer.name) exists!")
-}
-```
+`convenience init (Double, Void -> Void)`
 
-###Pause/start a timer<a name="pause"></a>
+> Creates an anonymous `Timer` with the given `delay` and `handler`. A random `name` is generated.
 
-```Swift
-// Pauses and resets the timer
-timer.pause()
+#### Properties
 
-// Only useful if you `pause()` the timer first
-timer.start()
-```
+`let name: String?` 
 
-###Destroy a timer before it fires<a name="destroy"></a>
+> The unique identifier
 
-```Swift
-timer.kill()
-```
+`let delay: Double` 
 
-###Fire a timer prematurely<a name="fire"></a>
+> Number of seconds the Timer waits until firing
 
-```Swift
-timer.fire()
-```
+`let handler: Void -> Void` 
 
-###Repeating timers<a name="repeating"></a>
+> The closure to be executed when the Timer fires
 
-**Note**: Since repeating `Timer`s have longer lifetimes than single-use `Timer`s, you are required to retain the `Timer` on your own.
+`let repeats: Bool` 
 
-```Swift
-// Execute a closure immediately and every 2 seconds afterwards
-self.beepTimer = Timer.repeat(before: 2) {
-  println("Beep")
-}
+> Whether or not the timer continues past its first delay cycle
 
-// Execute a closure every 2 seconds, but not immediately
-self.boopTimer = Timer.repeat(after: 2) {
-  println("Boop")
-}
-```
+#### Methods
+
+`func start ()`
+
+> Begins the countdown from `delay` to `0` seconds. Called automatically when a new `Timer` is constructed. Can be used after `stop()` is called. Adds the timer to `NSRunLoop.currentRunLoop()`.
+
+`func stop ()`
+
+> Stops the countdown that was started via `start()`. After calling this, you can call `start()` to restart the countdown.
+
+`func fire ()`
+
+> Completes the `Timer` early and releases it from memory.
+
+`func kill ()`
+
+> Prevents the `Timer` from completing and releases it from memory.
+
+#### Class Methods
+
+`class func repeat (before: Double, Void -> Void) -> Timer`
+
+> Creates a repeating `Timer` that fires its `handler` **immediately** and after every `delay` seconds.
+
+`class func repeat (after: Double, Void -> Void) -> Timer`
+
+> Creates a repeating `Timer` that fires its `handler` after every `delay` seconds.
+
+`class func named (String) -> Timer?`
+
+> Returns an existing `Timer` with the given `name`, or nil.
+
+---
 
 ####Crafted by [**@aleclarsoniv**](https://twitter.com/aleclarsoniv)

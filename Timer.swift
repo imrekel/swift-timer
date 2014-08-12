@@ -1,82 +1,82 @@
 
 import Foundation
 
-// Retains non-repeating timers
-private var timers = [String:Timer]()
-
-public class Timer {
+class Timer {
   
-  public let name: String?
+  let name: String?
   
-  public let delay: Double
+  let delay: Double
   
-  public let callback: Void -> Void
+  let handler: Void -> Void
   
-  public let repeats = false
+  let repeats = false
   
-  public convenience init (_ delay: Double, _ callback: Void -> Void) {
-    self.init(NSUUID().UUIDString, delay, callback)
+  convenience init (_ delay: Double, _ handler: Void -> Void) {
+    self.init(NSUUID().UUIDString, delay, handler)
   }
   
-  public init (_ name: String, _ delay: Double, _ callback: Void -> Void) {
+  init (_ name: String, _ delay: Double, _ handler: Void -> Void) {
     timers[name]?.kill()
     
     self.name = name
     self.delay = delay
-    self.callback = callback
+    self.handler = handler
     
     timers[name] = self
     start()
   }
   
-  public class func repeat (before delay: Double, _ callback: Void -> Void) -> Timer {
-    callback()
-    return Timer(repeat: delay, callback)
+  class func repeat (before delay: Double, _ handler: Void -> Void) -> Timer {
+    handler()
+    return Timer(repeat: delay, handler)
   }
   
-  public class func repeat (after delay: Double, _ callback: Void -> Void) -> Timer {
-    return Timer(repeat: delay, callback)
+  class func repeat (after delay: Double, _ handler: Void -> Void) -> Timer {
+    return Timer(repeat: delay, handler)
   }
   
-  public class func named (name: String) -> Timer? {
+  class func named (name: String) -> Timer? {
     return timers[name]
   }
   
-  public func start () {
-    if nsTimer { return }
+  func start () {
+    if nsTimer != nil { return }
     nsTimer = NSTimer(timeInterval: delay, target: self, selector: "execute", userInfo: nil, repeats: repeats)
     NSRunLoop.currentRunLoop().addTimer(nsTimer!, forMode: NSRunLoopCommonModes)
   }
   
-  public func pause () {
-    if !nsTimer { return }
+  func stop () {
+    if nsTimer == nil { return }
     nsTimer!.invalidate()
     nsTimer = nil
   }
   
-  public func fire () {
-    callback()
+  func fire () {
+    handler()
     kill()
   }
   
-  public func kill () {
-    pause()
-    if name { timers[name!] = nil }
+  func kill () {
+    stop()
+    if name != nil { timers[name!] = nil }
   }
   
   private var nsTimer: NSTimer?
   
   @objc private func execute () {
-    callback()
+    handler()
     if !repeats { kill() }
   }
   
-  private init (repeat delay: Double, _ callback: Void -> Void) {
+  private init (repeat delay: Double, _ handler: Void -> Void) {
     repeats = true
     
     self.delay = delay
-    self.callback = callback
+    self.handler = handler
     
     start()
   }
 }
+
+// Retains non-repeating timers
+private var timers = [String:Timer]()
